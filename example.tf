@@ -2,6 +2,16 @@ provider "aws" {
   region  = "us-west-2"
   version = "~> 2.0"
 }
+
+terraform {
+  backend "s3" {
+    bucket = "zlp-tf-states2"
+    key    = "example/"
+    region = "us-west-1"
+  }
+}
+
+
 #ec2 instance using the parameter store in the name of it
 data "aws_ami" "ubuntu" {
   most_recent = true
@@ -19,18 +29,18 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "web" {
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = "t3.micro"
-  subnet_id                   = "subnet-cc0c60e7"
+  subnet_id                   = "subnet-58af2c3e"
   associate_public_ip_address = true
   root_block_device {
     volume_type = "standard"
-    volume_size = 30
+    volume_size = 8
     encrypted   = true
   }
   tags = {
     Name       = "HelloWorld"
     Enviroment = "Dev"
   }
-  security_groups = ["sg-bfe0bffd"]
+  security_groups = ["sg-f73eddbf"]
 }
 
 
