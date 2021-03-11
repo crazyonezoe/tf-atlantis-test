@@ -34,15 +34,3 @@ resource "aws_instance" "web" {
 }
 
 
-# module "ec2_test" {
-#   source   = "./module/"
-#   ami      = data.aws_ami.ubuntu.id
-#   type     = "m5.large"
-#   subnet   = "subnet-cc0c60e7"
-#   ip       = true
-#   vol_type = "standard"
-#   vol_size = 30
-#   sg       = "sg-bfe0bffd"
-#   name     = "test"
-#   env      = "dev"
-# }
