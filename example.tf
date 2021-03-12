@@ -36,7 +36,7 @@ resource "aws_instance" "web" {
     encrypted   = true
   }
   tags = {
-    Name       = "example-ec2"
+    Name       = "example-ec22"
     Enviroment = "Dev"
   }
   security_groups = ["sg-f73eddbf"]
