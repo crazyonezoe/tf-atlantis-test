@@ -1,0 +1,5 @@
+pipeline:
+  terraform:
+    image: jmccann/drone-terraform:5
+    tf_version: 0.14.8
+    plan: true
