@@ -4,4 +4,8 @@ pipeline:
     tf_version: 0.14.8
     actions:
       - validate
+  terraform_plan:
+    image: jmccann/drone-terraform:5
+    tf_version: 0.14.8
+    actions:
       - plan
