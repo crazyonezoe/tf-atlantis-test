@@ -1,5 +1,5 @@
 provider "aws" {
-  region  = "us-east-1"
+  region  = "us-west-1"
 }
 
 terraform {
@@ -26,7 +26,7 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "web" {
-  ami                         = "ami-042e8287309f5df03"
+  ami                         = data.aws_ami.ubuntu.id
   instance_type               = "t3.micro"
   subnet_id                   = "subnet-58af2c3e"
   associate_public_ip_address = true
