@@ -1,5 +1,7 @@
 pipeline:
-  terraform:
+  terraform_validate:
     image: jmccann/drone-terraform:5
     tf_version: 0.14.8
-    plan: true
+    actions:
+      - validate
+      - plan
