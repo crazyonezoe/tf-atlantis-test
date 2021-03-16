@@ -5,7 +5,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket = "zlp-tf-states2"
-    key    = "example/"
+    key    = "example/ec2.tfstate"
     region = "us-west-1"
   }
 }
