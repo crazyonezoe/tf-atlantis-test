@@ -12,3 +12,6 @@ pipeline:
   terraform_apply:
     image: jmccann/drone-terraform:5
     tf_version: 0.14.8
+
+
+#https://github.com/jmccann/drone-terraform/blob/master/DOCS.md
